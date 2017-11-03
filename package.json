@@ -1,0 +1,28 @@
+{
+  "name": "testService",
+  "version": "1.0.1",
+  "description": "consumer example of memeni-lambda library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "updlib": "rm -rf node_modules/memeni-lambda; npm update",
+    "updtypes": "rm -rf node_modules/memeni-ts-types; npm update",
+    "updcoresdk": "rm -rf node_modules/memeni-core-sdk; npm update",
+    "compile": "tsc",
+    "serve": "cp serverless-dev.yml serverless.yml; sls webpack serve",
+    "deploy": "cp serverless-dev.yml serverless.yml; sls deploy --stage devcloud",
+    "deployProd": "cp serverless-prod.yml serverless.yml; sls deploy --stage prod --aws-profile prod"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.108.0",
+    "memeni-lambda": "git+https://naorsanilevici:YqF5Ag3Rr64yPjS8BaYV@bitbucket.org/memeni/memeni-lambda.git#setup",
+    "memeni-core-sdk": "git+https://naorsanilevici:YqF5Ag3Rr64yPjS8BaYV@bitbucket.org/memeni/core-sdk.git"
+  },
+  "devDependencies": {
+    "aws-sdk": "^2.142.0",
+    "serverless-offline": "^3.16.0",
+    "serverless-webpack": "^4.0.0"
+  }
+}
